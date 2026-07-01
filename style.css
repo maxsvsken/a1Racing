@@ -131,7 +131,7 @@ body {
     height: 100%;
     /* Grayscale pop-art pattern */
     background-color: var(--color-white);
-    background-image: url('images/pink-radial-dotted-comic-background-speed-lines-wallpaper-with-pop-art-halftone-texture-anime_497399-2918.jpg');
+    background-image: url('images/Racing/chrome_bg_red.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -457,7 +457,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/modern-abstract-background-with-elegant-wave-circle-shape-design-futuristic-concept_57082-2774.jpg');
+    background-image: url('images/Racing/chrome_bg_dark.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -564,7 +564,7 @@ body {
 }
 
 .navbar-scrolled .logo {
-    font-size: 1.8rem;
+    /* Scrolled logo container overrides if any */
 }
 
 .nav-container {
@@ -576,12 +576,20 @@ body {
 
 .logo {
     text-decoration: none;
-    font-size: 2rem;
-    color: var(--color-accent);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    letter-spacing: -0.05em;
+    display: flex;
+    align-items: center;
     transition: all 0.4s ease;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+.navbar-scrolled .logo-img {
+    height: 38px;
 }
 
 .nav-links {
@@ -1337,11 +1345,50 @@ details[open].faq-item p {
 /* Fix for Investors section empty space */
 #investors {
     min-height: auto !important;
+    position: relative;
+    overflow: visible;
+    z-index: 20;
+    background-image: none !important; /* Убирает точки */
+    background-color: var(--color-dark) !important; /* Убирает светлую подложку */
+    color: var(--color-white) !important;
+}
+
+#investors::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/Racing/chrome_bg_dark.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1.0; /* Убирает осветление */
+    z-index: 0;
+    pointer-events: none;
 }
 
 #investors .container {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    position: relative;
+    z-index: 1;
+}
+
+#investors .feature-item {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+#investors .feature-item:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+#investors .feature-item p {
+    color: var(--color-white) !important;
 }
 
 /* Footer Layout */
@@ -2360,7 +2407,7 @@ details[open].faq-item p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/pink-yellow-pop-art-background-with-halftone-dots-in-retro-comic-style-illustration-free-vector.jpg');
+    background-image: url('images/Racing/chrome_bg_red.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
